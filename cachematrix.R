@@ -1,17 +1,27 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Cache Matrix is used to save time reading the cached value of Matrix
+## It improves the performance
 
-## Write a short comment describing this function
+## Functino creates special matrix object that cache its results
 
 makeCacheMatrix <- function(x = matrix()) {
+
+##set the value of the vector
+
      inv <- NULL
      set <- function(y) {
           x <<- y
           inv <<- NULL
       }
+
+##get the value of the vector
       get <- function() x
+
+##set the value of the inverse
       setinverse <- function(inverse) inv <<- inverse
+
+##get the value of the inverse
       getinverse <- function() inv
+
       list(set=set, get=get, setinverse=setinverse, getinverse=getinverse)
 
 }
